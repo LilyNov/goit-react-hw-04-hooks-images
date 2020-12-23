@@ -45,7 +45,7 @@ export default function App() {
 
   return (
     <div>
-      <Searchbar getImg={setQuery} getPage={setPage} />
+      <Searchbar getImg={setQuery} getPage={setPage} getRender={setImages} />
 
       {status === 'idle' && <p style={{ textAlign: 'center' }}>Let's Go!</p>}
 

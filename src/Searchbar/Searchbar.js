@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import s from '../Searchbar/Searchbar.module.css';
 
-export default function Searchbar({ getImg }) {
+export default function Searchbar({ getImg, getPage }) {
   const [image, setImage] = useState('');
 
   //получение значения input
@@ -22,6 +22,7 @@ export default function Searchbar({ getImg }) {
     }
 
     getImg(image);
+    getPage(1);
     setImage('');
   };
 

@@ -25,15 +25,19 @@ export default function App() {
     imgAPI
       .fetchImages(query, page)
       .then(newImages => {
-        setImages(images => [...images, ...newImages.hits]);
+        setImages(prevImages => [...prevImages, ...newImages.hits]);
         setStatus('resolved');
       })
 
+      // .then(newImages => {
+      //   setImages(newImages);
+      //   setStatus('resolved');
+      // })
       .catch(error => {
         setError(error);
         setStatus('rejected');
       });
-  }, [query, page, images]);
+  }, [query, page]);
 
   const onClickLoadMoreBtn = () => {
     setPage(page => page + 1);
